@@ -38,10 +38,11 @@ def evaluate_model(model, X_test, y_test):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--tracking_uri', type=str, default='http://127.0.0.1:5001')
+    parser.add_argument('--tracking_uri', type=str, default='')
     args = parser.parse_args()
 
-    mlflow.set_tracking_uri(args.tracking_uri)
+    if args.tracking_uri:
+        mlflow.set_tracking_uri(args.tracking_uri)
     mlflow.sklearn.autolog()
 
     X, y = load_data(DATA_PATH)
