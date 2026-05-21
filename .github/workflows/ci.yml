@@ -33,7 +33,7 @@ jobs:
           pip install pandas numpy scikit-learn mlflow joblib
 
       - name: Set MLflow Tracking URI
-        run: echo "MLFLOW_TRACKING_URI=http://127.0.0.1:5001" >> $GITHUB_ENV
+        run: echo "MLFLOW_TRACKING_URI=" >> $GITHUB_ENV
 
       - name: Run mlflow project
         run: |
